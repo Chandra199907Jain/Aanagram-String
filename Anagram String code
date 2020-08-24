@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+class anagram
+{
+    public static void main(String args[])throws IOException
+    {
+        InputStreamReader isr=new InputStreamReader(System.in);
+        BufferedReader br=new BufferedReader(isr);
+        String str,ss;
+        int t,i;
+        boolean res;
+        System.out.println("Enter the test cases of your choice");
+        t=Integer.parseInt(br.readLine());
+        for(i=1;i<=t;i++)
+        {
+        System.out.println("Enter the string 1 of your choice");
+        str=br.readLine();
+        System.out.println("Enter the string 2 of your choice");
+        ss=br.readLine();
+        str=str.replaceAll("//s","");
+        ss=ss.replaceAll("//s","");
+        char arr[]=str.toCharArray();
+        char arr1[]=ss.toCharArray();
+        Arrays.sort(arr);
+        Arrays.sort(arr1);
+        res=Arrays.equals(arr,arr1);
+        if(res==true)
+        {
+            System.out.println("Anagram String");
+        }
+        else
+        {
+            System.out.println("Its not an Anagaram String");
+        }
+        ss="";
+        str="";
+    }
+}
+}
